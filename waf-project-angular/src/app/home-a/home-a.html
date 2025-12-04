@@ -1,0 +1,256 @@
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <nav class="navbar">
+            <div class="logo">☕ COFEE</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#reservation">Table Reservation</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="order.html">Order</a></li>
+            </ul>
+        </nav>
+        <div class="hero-content">
+            <h1>Welcome to<br><span>Our Coffee Shop</span></h1>
+            <p>Wake up and smell the coffee — fresh, bold, and unforgettable.</p>
+            <a href="order.html" class="btn">Order Now</a>
+        </div>
+    </header>
+
+    <!-- Reservation Section -->
+    <section id="reservation">
+        <header>
+            <h1>Reserve a Table</h1>
+            <p>Book your table in advance and enjoy your favorite brew with us!</p>
+        </header>
+
+        <section class="tables-section">
+            <h2>Select a Table</h2>
+            <div class="table-grid">
+                <!-- Tables will be generated here by JS -->
+            </div>
+        </section>
+
+        <section class="reservation-form-section">
+            <form class="reservation-form" id="reservationForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="date">Reservation Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time:</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="guests">Number of Guests:</label>
+                <input type="number" id="guests" name="guests" min="1" max="20" required>
+
+                <label for="table">Table Number:</label>
+                <input type="number" id="table" name="table" min="1" max="5" required readonly>
+
+                <label for="message">Additional Notes:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Any special requests?"></textarea>
+
+                <button type="submit">Book Now</button>
+            </form>
+        </section>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Welcome to <strong>Cozy Coffee</strong> — your neighborhood coffee haven. Since opening our doors in
+                    2018, we've been dedicated to serving freshly brewed coffee, handcrafted drinks, and locally sourced
+                    pastries in a warm, welcoming space.
+                </p>
+                <p>
+                    At Cozy Coffee, we believe every cup tells a story. Whether you're starting your day or catching up
+                    with friends, we’re here to make your moments more meaningful — one sip at a time.
+                </p>
+            </div>
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80"
+                    alt="Inside Cozy Coffee" />
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section class="menu-section" id="menu">
+        <header class="menu-header">
+            <h1>☕ Coffee Menu</h1>
+            <p>Enjoy handcrafted coffee and freshly baked treats</p>
+        </header>
+
+        <!-- Coffee -->
+        <button class="toggle-btn" onclick="toggleSection('coffee-items')">☕ Coffee</button>
+        <div class="menu-container" id="coffee-items">
+            <div class="menu-item">
+                <img src="espresso.jpg" alt="Espresso">
+                <h3>Espresso</h3>
+                <p>Strong shot of pure coffee</p>
+                <span>₹120</span>
+            </div>
+            <div class="menu-item">
+                <img src="capcuino.jpg" alt="Cappuccino">
+                <h3>Cappuccino</h3>
+                <p>Espresso with foamed milk</p>
+                <span>₹180</span>
+            </div>
+            <div class="menu-item">
+                <img src="cold brew.jpg" alt="Cold Brew">
+                <h3>Cold Brew</h3>
+                <p>Chilled, slow-brewed coffee</p>
+                <span>₹150</span>
+            </div>
+        </div>
+
+        <!-- Baked Items -->
+        <button class="toggle-btn" onclick="toggleSection('baked-items')">🥐 Baked Items</button>
+        <div class="menu-container" id="baked-items">
+            <div class="menu-item">
+                <img src="crossiant.jpg" alt="Croissant">
+                <h3>Butter Croissant</h3>
+                <p>Flaky, buttery pastry</p>
+                <span>₹90</span>
+            </div>
+            <div class="menu-item">
+                <img src="muffin.jpg" alt="Muffin">
+                <h3>Chocolate Muffin</h3>
+                <p>Rich and moist muffin</p>
+                <span>₹110</span>
+            </div>
+            <div class="menu-item">
+                <img src="bannana bread.jpg" alt="Banana Bread">
+                <h3>Banana Bread</h3>
+                <p>Homestyle banana loaf</p>
+                <span>₹100</span>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <h2>Contact Us</h2>
+        <p style="text-align:center;">
+            📍 PES University<br>
+            📞 Call us: +91-9741297898<br>
+            📧 Email: pesuniversity@gmail.com
+        </p>
+    </section>
+
+     <!-- JavaScript for Menu Toggle -->
+     <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('show');
+        }
+        // --------------------- Table Reservation JS ---------------------
+        document.addEventListener("DOMContentLoaded", () => {
+            const bookedTables = JSON.parse(localStorage.getItem("bookedTables")) || [];
+            const tableGrid = document.querySelector(".table-grid");
+            const tableInput = document.getElementById("table");
+            const form = document.getElementById("reservationForm");
+
+            // Generate 5 table buttons
+            for (let i = 1; i <= 5; i++) {
+                const tableDiv = document.createElement("div");
+                tableDiv.className = "table";
+                tableDiv.textContent = "Table " + i;
+
+                if (bookedTables.includes(i)) {
+                    tableDiv.classList.add("booked");
+                }
+
+                tableDiv.addEventListener("click", () => {
+                    if (bookedTables.includes(i)) {
+                        alert("Sorry, Table " + i + " is already booked!");
+                    } else {
+                        document.querySelectorAll(".table").forEach(t => t.classList.remove("selected"));
+                        tableDiv.classList.add("selected");
+                        tableInput.value = i;
+                    }
+                });
+
+                tableGrid.appendChild(tableDiv);
+            }
+
+            if (form) {
+                form.addEventListener("submit", (e) => {
+                    e.preventDefault();
+
+                    const tableNum = parseInt(tableInput.value);
+                    if (!tableNum || bookedTables.includes(tableNum)) {
+                        alert("Please select a valid available table.");
+                        return;
+                    }
+
+                    bookedTables.push(tableNum);
+                    localStorage.setItem("bookedTables", JSON.stringify(bookedTables));
+
+                    alert("Table " + tableNum + " successfully booked!");
+                    window.location.reload();
+                });
+            }
+        });
+
+        // --------------------- Order Form JS ---------------------
+        document.addEventListener("DOMContentLoaded", () => {
+            const orderForm = document.getElementById('orderForm');
+
+            if (orderForm) {
+                orderForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const prices = {
+                        espresso: 120,
+                        coldbrew: 150,
+                        cappuccino: 140,
+                        croissant: 90,
+                        muffin: 100,
+                        bananaBread: 110
+                    };
+
+                    let total = 0;
+                    let hasItem = false;
+
+                    for (const item in prices) {
+                        const input = document.querySelector(`input[name="${item}"]`);
+                        const qty = parseInt(input?.value) || 0;
+
+                        if (qty > 0) {
+                            hasItem = true;
+                            total += prices[item] * qty;
+                        }
+                    }
+
+                    const totalDisplay = document.getElementById('orderTotal');
+
+                    if (!hasItem) {
+                        alert('Please select at least one item to order.');
+                        totalDisplay.textContent = '';
+                        return;
+                    }
+
+                    totalDisplay.textContent = `Total: ₹${total}`;
+                    alert('Order placed successfully! Total amount: ₹' + total);
+                });
+            }
+        });
+    </script>
+
+

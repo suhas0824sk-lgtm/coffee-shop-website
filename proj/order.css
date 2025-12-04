@@ -1,0 +1,111 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #fff8f0;
+  color: #3e2723;
+  line-height: 1.6;
+  padding-bottom: 50px;
+}
+
+/* Header */
+.menu-header {
+  background-color: #4e342e;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.menu-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.menu-header p {
+  font-size: 1.1rem;
+}
+
+/* Form Layout */
+.order-form {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.order-category {
+  margin-bottom: 30px;
+}
+
+.order-category h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #6d4c41;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+/* Menu Item */
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 10px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.menu-item h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  color: #4e342e;
+}
+
+.menu-item input {
+  padding: 6px 10px;
+  width: 80px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Order Summary */
+.order-summary {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.order-summary button {
+  background-color: #6d4c41;
+  color: white;
+  padding: 12px 30px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.order-summary button:hover {
+  background-color: #5d4037;
+}
+
+#orderTotal {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  color: #bf360c;
+  font-weight: bold;
+}
+
+
+
+
+

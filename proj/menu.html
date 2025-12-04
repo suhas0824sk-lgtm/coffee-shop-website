@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu - Dement Coffee Shop</title>
+  <link rel="stylesheet" href="menu.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="menu-header">
+    <h1>☕  Coffee Menu</h1>
+    <p>Enjoy handcrafted coffee and freshly baked treats</p>
+  </header>
+
+  <!-- Coffee Section -->
+  <section class="menu-section">
+    <button class="toggle-btn" onclick="toggleSection('coffee-items')">☕ Coffee</button>
+    <div class="menu-container" id="coffee-items">
+      <div class="menu-item">
+        <img src="espresso.jpg" alt="Espresso">
+        <h3>Espresso</h3>
+        <p>Strong shot of pure coffee</p>
+        <span>₹120</span>
+      </div>
+      <div class="menu-item">
+        <img src="capcuino.jpg" alt="Cappuccino">
+        <h3>Cappuccino</h3>
+        <p>Espresso with foamed milk</p>
+        <span>₹180</span>
+      </div>
+      <div class="menu-item">
+        <img src="cold brew.jpg" alt="Cold Brew">
+        <h3>Cold Brew</h3>
+        <p>Chilled, slow-brewed coffee</p>
+        <span>₹150</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Baked Items Section -->
+  <section class="menu-section">
+    <button class="toggle-btn" onclick="toggleSection('baked-items')">🥐 Baked Items</button>
+    <div class="menu-container" id="baked-items">
+      <div class="menu-item">
+        <img src="crossiant.jpg" alt="Croissant">
+        <h3>Butter Croissant</h3>
+        <p>Flaky, buttery pastry</p>
+        <span>₹90</span>
+      </div>
+      <div class="menu-item">
+        <img src="muffin.jpg" alt="Muffin">
+        <h3>Chocolate Muffin</h3>
+        <p>Rich and moist muffin</p>
+        <span>₹110</span>
+      </div>
+      <div class="menu-item">
+        <img src="bannana bread.jpg" alt="Banana Bread">
+        <h3>Banana Bread</h3>
+        <p>Homestyle banana loaf</p>
+        <span>₹100</span>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      section.classList.toggle('show');
+    }
+  </script>
+</body>
+</html>

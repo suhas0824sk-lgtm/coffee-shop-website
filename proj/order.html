@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Now - Dement Coffee</title>
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+  
+  <header class="menu-header">
+    <h1>Order Now</h1>
+    <p>Select your favorite coffee and baked items</p>
+  </header>
+
+  <form id="orderForm" class="order-form">
+    <div class="order-sections">
+      <!-- Coffee Section -->
+      <section class="order-category">
+        <h2>Coffee</h2>
+        <div class="menu-item">
+          <h3>Espresso - ₹120</h3>
+          <input type="number" name="espresso" min="0" placeholder="Qty" />
+        </div>
+        <div class="menu-item">
+          <h3>Coldbrew - ₹150</h3>
+          <input type="number" name="coldbrew" min="0" placeholder="Qty" />
+        </div>
+        <div class="menu-item">
+          <h3>Cappuccino - ₹140</h3>
+          <input type="number" name="cappuccino" min="0" placeholder="Qty" />
+        </div>
+      </section>
+
+      <!-- Baked Items Section -->
+      <section class="order-category">
+        <h2>Baked Items</h2>
+        <div class="menu-item">
+          <h3>Croissant - ₹90</h3>
+          <input type="number" name="croissant" min="0" placeholder="Qty" />
+        </div>
+        <div class="menu-item">
+          <h3>Muffin - ₹100</h3>
+          <input type="number" name="muffin" min="0" placeholder="Qty" />
+        </div>
+        <div class="menu-item">
+          <h3>Banana Bread - ₹110</h3>
+          <input type="number" name="bananaBread" min="0" placeholder="Qty" />
+        </div>
+      </section>
+    </div>
+
+    <div class="order-summary">
+      <button type="submit">Place Order</button>
+      <p id="orderTotal"></p>
+    </div>
+  </form>
+
+  <script src="order.js"></script>
+</body>
+</html>

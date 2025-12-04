@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: #4e342e;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+
+.tables-section, .reservation-form-section {
+  padding: 2em;
+  text-align: center;
+}
+
+.table-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+.table {
+  width: 100px;
+  height: 100px;
+  background: #a1887f;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.table.booked {
+  background: #d32f2f;
+  cursor: not-allowed;
+}
+
+.table.selected {
+  background: #388e3c;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+input, textarea, button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #6d4c41;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #5d4037;
+}
